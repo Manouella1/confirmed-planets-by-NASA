@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="mass.css" />
+    <!--Länk till linkedin ikon-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- <link rel="stylesheet" href="path_to_load_awesome.css" /> -->
+    <title>Largest Planetss</title>
+  </head>
+  <body>
+    <header>
+      <!---LOGGA MED LÄNK -->
+      <a href="index.html" aria-label="Go to Home page">
+        <img src="logga.png" alt="space logo" />
+      </a>
+      <!--NAV LÄNKAR-->
+      <nav>
+        <a href="index.html" class="Home" aria-la>Home</a>
+        <a href="mass.html" aria-label="Go to largest planets"
+          >Largest Planets</a
+        >
+        <a href="solarsystem.html" aria-label="go to 3D solar system"
+          >3D Solar System</a
+        >
+        <a href="stad.html" aria-label="Go to Cities">Cities</a>
+        <div id="indicator"></div>
+      </nav>
+    </header>
+    <main>
+      <h1>The largest planets in the Universe compared with earth</h1>
+
+      <!--Load awesome-->
+      <div class="la-ball-spin-rotate la-3x" id="loading">
+        <div></div>
+        <div></div>
+      </div>
+
+      <!-- Canvas-element för Chart.js -->
+      <canvas id="myChart"></canvas>
+      <h2>Hold on! We're searching through the Universe...</h2>
+      <div class="chart-container">
+        <div id="chartLegend"></div>
+        <div></div>
+        <section>
+          <p>
+            This is a bubble chart with indexes from 0-9 on the X-axis. With the
+            biggest Planet being on the 0 X-axis. Earth is on the 9th X-axis
+            which you can hardly see even though we had to scale it up ^30x it's
+            size.
+          </p>
+          <p>
+            Planets are measured in Jupiter masses. It's the common unit for
+            planets which means they are compared with the biggest planet in our
+            solar system. As of today the biggest confirmed planet to be found
+            has a jupiter mass of 752 Jupiters! While Jupiter it'self is the
+            size of 315 earths!
+          </p>
+        </section>
+      </div>
+    </main>
+    <footer>
+      Made by Manouella Papadopoulos
+      <a
+        href="https://www.linkedin.com/in/manouella-papadopoulos-2b2b2a177/"
+        aria-label="Go to the authors linkedin page"
+        target="_blank"
+      >
+        <i class="fa-brands fa-linkedin fa-xl" style="color: #fff"> </i>
+      </a>
+    </footer>
+    <!-- Länka Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Länka din JavaScript-fil -->
+    <script src="mass.js"></script>
+  </body>
+</html>

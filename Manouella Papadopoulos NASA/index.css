@@ -1,0 +1,958 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0c0a08;
+  background-image: url(background-img.jpg);
+  background-size: cover;
+  color: #fefefe;
+  font-family: poppins, open-sans, tahoma, sans-serif;
+  -webkit-animation: slidein 100s;
+  animation: slidein 100s;
+
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
+@-webkit-keyframes slidein {
+  from {
+    background-position: top;
+    background-size: 1900px;
+  }
+  to {
+    background-position: -100px 0px;
+    background-size: 2750px;
+  }
+}
+
+@keyframes slidein {
+  from {
+    background-position: top;
+    background-size: 1900px;
+  }
+  to {
+    background-position: -100px 0px;
+    background-size: 2750px;
+  }
+}
+
+.items-selection,
+.pagination-controls,
+.search-container {
+  margin: auto;
+  margin-top: 14px;
+}
+
+section {
+  font-weight: 300;
+  font-size: 16px;
+  padding-top: 40px;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  word-spacing: 1px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Lägg till textskugga för att ge lite djup */
+  max-width: 800px;
+  text-align: center;
+  margin: auto;
+  margin-bottom: auto;
+  margin-bottom: 8em;
+}
+
+#planet-count {
+  font-weight: 700;
+}
+
+h3 {
+  position: relative;
+  cursor: pointer;
+  z-index: 3000;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  word-spacing: 1px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Lägg till textskugga för att ge lite djup */
+}
+
+h4,
+h5 {
+  text-align: center;
+  font-weight: 500;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  word-spacing: 1px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Lägg till textskugga för att ge lite djup */
+}
+
+@media screen and (min-width: 1060px) {
+  /*************************
+/*********************** NAV STYLING DESKTOP
+/******************************************/
+  .search-filter-btn {
+    margin-left: 3em;
+    margin-bottom: 4em;
+  }
+
+  .logo {
+    max-width: 200px;
+    cursor: pointer;
+    filter: grayscale(100%);
+    transition: filter 450ms ease;
+    margin: 20px;
+    transition-property: box-shadow, transform;
+    transition-duration: 350ms;
+    transition-timing-function: ease;
+    margin: 0;
+    margin-left: 3px;
+    /* box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.24); */
+  }
+
+  .logo:is(:hover, :focus) {
+    filter: grayscale(0%) drop-shadow(0 8px 8px rgba(0, 0, 0, 0.5));
+    /* border-radius: 50%;
+  box-shadow: 0px 8px 10px 1px rgba(0, 0, 0, 0.2); */
+    transform: translateY(-10px);
+  }
+
+  /*****************
+/********** NAV LINKS DESKTOP
+/*****************************/
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 8px;
+  }
+  nav {
+    margin-top: 0;
+  }
+
+  nav {
+    top: 50%;
+    right: 0;
+    left: 0;
+    display: table;
+    margin: 0 auto;
+    transform: translateY(-50%);
+  }
+
+  nav .navlink {
+    position: relative;
+    max-width: 33.333%;
+    display: table-cell;
+    text-align: center;
+    color: #949494;
+    text-decoration: none;
+    font: poppins;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 20px;
+    transition: 0.2s ease color;
+  }
+
+  nav .navlink:before,
+  nav .navlink:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 0.2s ease transform;
+  }
+
+  nav .navlink:before {
+    top: 0;
+    left: 10px;
+    width: 6px;
+    height: 6px;
+  }
+
+  nav .navlink:after {
+    top: 5px;
+    left: 18px;
+    width: 4px;
+    height: 4px;
+  }
+
+  nav .navlink:nth-child(1):before {
+    background-color: yellow;
+  }
+
+  nav .navlink:nth-child(1):after {
+    background-color: red;
+  }
+
+  nav .navlink:nth-child(2):before {
+    background-color: #00e2ff;
+  }
+
+  nav .navlink:nth-child(2):after {
+    background-color: #89ff00;
+  }
+
+  nav .navlink:nth-child(3):before {
+    background-color: purple;
+  }
+
+  nav .navlink:nth-child(4):after {
+    background-color: palevioletred;
+  }
+
+  #indicator {
+    display: block;
+    position: absolute;
+    left: 5%;
+    bottom: 0;
+    width: 40px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: 0.4s ease left;
+  }
+
+  nav .navlink:hover {
+    color: #fff;
+  }
+
+  nav .navlink:hover:before,
+  nav .navlink:hover:after {
+    transform: scale(1);
+  }
+
+  nav .navlink:nth-child(1):hover ~ #indicator {
+    right: 5%;
+    background: linear-gradient(130deg, yellow, red);
+  }
+
+  nav .navlink:nth-child(2):hover ~ #indicator {
+    left: 30%;
+    background: linear-gradient(130deg, #00e2ff, #89ff00);
+  }
+
+  nav .navlink:nth-child(3):hover ~ #indicator {
+    left: 63%;
+    background: linear-gradient(130deg, purple, palevioletred);
+  }
+
+  nav .navlink:nth-child(4):hover ~ #indicator {
+    left: 88%; /* Deta bestämmer hur långt hover diven ska röra sig*/
+    background: linear-gradient(130deg, rgb(219, 236, 91), rgb(182, 62, 154));
+  }
+  /******************************************************************************************************************************************
+/ NAV STYLE SLUT
+********************************************************************************************************************************/
+  #planet-type-buttons {
+    margin-top: 15px;
+  }
+
+  h1 {
+    padding: 5px;
+    font-size: 3rem;
+    line-height: 3;
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 19px;
+    /* word-spacing: 15px; */
+    margin-top: 0px;
+    margin-bottom: 80px;
+  }
+
+  .planet-type-text {
+    font-weight: 500;
+    margin-left: 3.5em;
+    font-size: 16px;
+    margin-bottom: 40px;
+    padding-top: 40px;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    word-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Lägg till textskugga för att ge lite djup */
+  }
+} /***** MEDIA QUERY STÄNGD *****/
+/**********************************************
+/**** FILTRERINGS KNAPPARNA ****/
+/**********************************************/
+
+#planet-type-buttons > *:hover,
+#planet-type-buttons > *:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+#planet-type-buttons > * {
+  --color: #e3e3e3;
+  --hover: #00e2ff;
+  margin: 3em;
+}
+
+#planet-type-buttons > *:hover,
+#planet-type-buttons > *:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+#planet-type-buttons > *:hover,
+#planet-type-buttons > *:focus {
+  border-color: var(--hover);
+  color: #fff;
+}
+
+#planet-type-buttons > * {
+  background: none;
+  border: 1px solid;
+  border-radius: 8px;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 0.5em 1em;
+  color: #fefefe;
+  transition: 0.25s;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+/******* FILTRERINGS KNAPPAR STYLE SLUT *****/
+
+#search-container {
+  display: inline;
+  margin-left: 3em;
+  margin-bottom: 7em;
+}
+
+/**************************************************
+/********** SEARCH BAR ******/
+/*****************************************/
+
+#search-input:hover,
+#search-input:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+#search-input {
+  --color: #e3e3e3;
+  --hover: #00e2ff;
+}
+
+#search-input:hover,
+#search-input:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+#search-input {
+  background: none;
+  border: 1px solid;
+  border-radius: 8px;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 0.5em 1em;
+  color: #fefefe;
+  transition: 0.25s;
+}
+#search-input:hover,
+#search-input:focus {
+  border-color: var(--hover);
+  color: #fff;
+}
+
+#search-input {
+  background: none;
+  border: 1px solid;
+  border-radius: 10px;
+  line-height: 1;
+  margin-top: 0.4em;
+}
+/******************************************************
+/***************** SEARCH BUTTON *****************/
+/****************************************************/
+
+#search-button:hover,
+#search-button:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+#search-button {
+  --color: #e3e3e3;
+  --hover: #00e2ff;
+}
+
+#search-button:hover,
+#search-button:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+#search-button {
+  color: var(--color);
+  transition: 0.25s;
+}
+#search-button:hover,
+#search-input:focus {
+  border-color: var(--hover);
+  color: #fff;
+}
+
+#search-button {
+  background: none;
+  border: 1px solid;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  /* margin: 0.2em;
+  padding: 0.5em 1em; */
+}
+
+/*******************************************
+/****************** SEARCH STYLE SLUT *******/
+/***************************************************/
+
+/*********************************
+/********************************** PAGINATION STYLE
+/********************************/
+#prev-page:hover,
+#prev-page:focus,
+#next-page:hover,
+#next-page:focus,
+#first-page:hover,
+#first-page:focus,
+#last-page:hover,
+#last-page:focus,
+#items-per-page:hover,
+#items-per-page:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.2em);
+}
+
+#prev-page,
+#prev-page,
+#next-page,
+#next-page,
+#first-page,
+#first-page,
+#last-page,
+#last-page,
+#items-per-page {
+  --color: #e3e3e3;
+  --hover: #00e2ff;
+  margin: 3em;
+}
+
+#prev-page:hover,
+#prev-page:focus,
+#next-page:hover,
+#next-page:focus,
+#first-page:hover,
+#first-page:focus,
+#last-page:hover,
+#last-page:focus,
+#items-per-page:hover,
+#items-per-page:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.2em);
+}
+
+#prev-page:hover,
+#prev-page:focus,
+#next-page:hover,
+#next-page:focus,
+#first-page:hover,
+#first-page:focus,
+#last-page:hover,
+#last-page:focus,
+#items-per-page:hover,
+#items-per-page:focus {
+  border-color: var(--hover);
+  color: #fff;
+}
+
+#items-per-page {
+  background: none;
+  border: 1px solid;
+  border-radius: 8px;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 0.5em 1em;
+  color: #fefefe;
+  transition: 0.25s;
+}
+#prev-page,
+#prev-page,
+#next-page,
+#next-page,
+#first-page,
+#first-page,
+#last-page,
+#last-page {
+  background: none;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  line-height: 1;
+  margin: 0.5em;
+  color: #fefefe;
+  transition: 0.25s;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+}
+
+#pagination {
+  display: inline-block;
+  margin-left: 3em;
+}
+
+#page-text {
+  letter-spacing: 2px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  margin-left: 3em;
+  margin-bottom: 30px;
+}
+/*********************************
+/**************** PAGINATION STYLE SLUT **************
+/********************************************/
+
+.row {
+  /* list-style: none; */
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.1rem;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  max-width: 100%;
+  width: 100%;
+}
+
+h4 {
+  position: absolute;
+  padding: 8;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  /* background: rgba(0, 0, 0, 0.43); */
+  color: #fefefe;
+}
+
+h5 {
+  position: absolute;
+  padding: 8;
+  margin-top: 40px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  /* background: rgba(0, 0, 0, 0.43); */
+  color: #fefefe;
+  z-index: 1;
+}
+
+/* p {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-top: 6.5em;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fefefe;
+} */
+
+/* #h3 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+} */
+
+#planets-container {
+  /* list-style: none; */
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.1rem;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  max-width: 100%;
+  width: 100%;
+}
+
+.col-pic {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-top: 6.5em;
+  background: rgba(0, 0, 0, 0.43);
+}
+/* .col-pic {
+  color: #fff;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  font-family: "Oxygen-Bold";
+}
+.col-pic {
+  color: #fff;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-family: "roboto slab", sans-serif;
+  letter-spacing: 0.25px;
+} */
+
+.col-3 {
+  /* position: relative; */
+  /* overflow: ; */
+  margin-bottom: 1.5em;
+  z-index: 0;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: all 2.2s ease-in-out;
+  -moz-transition: all 2.2s ease-in-out;
+  -ms-transition: all 2.2s ease-in-out;
+  -o-transition: all 2.2s ease-in-out;
+  transition: all 2.2s ease-in-out;
+}
+.col-3,
+.planetImg {
+  -webkit-transition: all 2.4s ease-in-out;
+  -moz-transition: all 2.4s ease-in-out;
+  -ms-transition: all 2.4s ease-in-out;
+  -o-transition: all 2.4s ease-in-out;
+  transition: all 2.4s ease-in-out;
+  height: 320px;
+}
+
+.col-3 #imglink {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.StopOverflow {
+  overflow: hidden;
+}
+.col-3:hover,
+#imglink:hover,
+#planetImg:hover {
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  transform: scale(1.5);
+}
+
+.col-3:hover .col-pic {
+  background: rgba(0, 0, 0, 0.59);
+}
+
+.padcol {
+  padding-left: 1px;
+  padding-right: 2px;
+  margin-top: -17px;
+}
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {
+  opacity: 0.7;
+}
+
+/* The Modal (background) */
+.modal {
+  margin-inline: auto;
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+}
+
+p {
+  margin-left: 10em;
+  max-width: 70%;
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Animation */
+.modal-content,
+#caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+  .modal-content {
+    width: 100%;
+  }
+}
+
+/* MODAL STYLE SLUT***********/
+footer {
+  text-align: center;
+  width: 100%;
+  margin-top: 70px;
+  padding-top: 7px;
+  height: 2rem;
+  background: rgb(5, 97, 116);
+  background: linear-gradient(
+    0deg,
+    rgba(157, 216, 255, 0.464) 20%,
+    rgba(253, 187, 45, 0) 100%
+  );
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+/********************* Mobile view ***************************************************/
+@media screen and (max-width: 1060px) {
+  #indicator {
+    display: none;
+  }
+
+  #planet-type-buttons {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  #pagination {
+    display: grid;
+    grid-template-areas:
+      "items-range-selector"
+      "pagination-buttons"
+      "search-bar";
+    gap: 10px; /* Space between grid items */
+
+    align-items: center; /* Align items vertically */
+    margin: auto;
+  }
+
+  /* Assign the select and spans to a grid area */
+  #items-per-page,
+  #pagination > span:not(#current-page):not(#total-pages) {
+    grid-area: items-range-selector;
+  }
+
+  /* Assign the pagination buttons to a grid area */
+  #first-page,
+  #prev-page,
+  #next-page,
+  #last-page,
+  #current-page,
+  #total-pages {
+    grid-area: pagination-buttons;
+    margin: auto;
+  }
+
+  .items-selection,
+  .pagination-controls,
+  .search-container {
+    margin: auto;
+    margin-top: 6px;
+  }
+  /* Assign the search container to a grid area */
+  #search-container {
+    grid-area: search-bar;
+    margin: auto;
+  }
+
+  #search-input {
+    flex-grow: 1; /* Input grows to fill space */
+    margin-right: 10px; /* Space between input and button */
+  }
+
+  #search-button {
+    flex-shrink: 0; /* Prevent the button from shrinking */
+  }
+
+  /** logga ***/
+  .logo {
+    max-width: 170px;
+    cursor: pointer;
+    filter: grayscale(100%);
+    transition: filter 450ms ease;
+    margin: 20px;
+    transition-property: box-shadow, transform;
+    transition-duration: 350ms;
+    transition-timing-function: ease;
+    margin: 0px;
+    /* box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.24); */
+    /* position: absolute; */
+    left: 20px;
+    top: 20px;
+  }
+
+  .logo:is(:hover, :focus) {
+    filter: grayscale(0%) drop-shadow(0 8px 8px rgba(0, 0, 0, 0.5));
+    /* border-radius: 50%;
+box-shadow: 0px 8px 10px 1px rgba(0, 0, 0, 0.2); */
+    transform: translateY(-10px);
+  }
+  /* Hamburger Menu */
+  .hamburger-menu {
+    display: block;
+    position: absolute;
+    margin-top: 25px;
+    right: 20px;
+    font-size: 25px;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it's above other elements */
+  }
+
+  /* Hide regular navigation links */
+  nav .navlink {
+    display: none;
+
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  nav {
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    position: absolute;
+    /* top: 60px; Below the hamburger menu */
+    right: 0;
+    width: 100%;
+    transform: translateY(-100%); /* Start off-screen */
+    transition: transform 0.5s ease-in-out; /* Smooth transition for sliding down */
+  }
+
+  /* Ensure the logo stays on the left */
+  .logo {
+    float: left;
+  }
+
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  nav {
+    margin: auto;
+  }
+
+  /* Class to slide down the navbar */
+  .nav-active {
+    transform: translateY(0); /* Slide down to show */
+  }
+
+  h1 {
+    padding: 5px;
+    font-size: 1rem;
+    line-height: 1;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    /* word-spacing: 15px; */
+    margin-top: 20px;
+    margin-bottom: 80px;
+  }
+  section {
+    font-weight: 200;
+    font-size: 11px;
+    padding: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  .planet-type-text {
+    font-weight: 500;
+    margin-left: 12px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    word-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Lägg till textskugga för att ge lite djup */
+  }
+}

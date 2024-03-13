@@ -1,0 +1,364 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #121212; /* Mörk bakgrund */
+  background-image: url(space-bakgrund.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  padding: 5px;
+  font-size: 2rem;
+  line-height: 3;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  /* word-spacing: 15px; */
+  margin-top: 0px;
+  margin-bottom: 80px;
+}
+
+form {
+  background: rgba(
+    255,
+    255,
+    255,
+    0.05
+  ); /* Genomskinlig vit för form bakgrund */
+  backdrop-filter: blur(10px); /* Ger en oskärpa bakom form-elementen */
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  width: 600px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0 0 0 / 30%);
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtil vit kant */
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background: #333; /* Mörk bakgrund för input-fält */
+  border: none;
+  color: #aaa; /* Ljusare textfärg */
+}
+
+input::placeholder {
+  color: #888; /* Ännu ljusare textfärg för placeholder */
+}
+
+.edit-button {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+button {
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0 0 0 / 30%);
+  background: linear-gradient(to right, #0f0f0f, #333); /* Gradient bakgrund */
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 95%;
+  box-sizing: border-box;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(
+    to right,
+    #333,
+    #0f0f0f
+  ); /* Ändrar riktningen på gradienten */
+}
+
+#citiesTable {
+  background: rgba(255, 255, 255, 0.05); /* Liknande stil som formuläret */
+  backdrop-filter: blur(10px);
+  border-collapse: collapse;
+  margin: auto;
+  margin-top: 40px;
+  width: 700px;
+  box-shadow: 0 0 10px rgba(0 0 0 / 30%);
+  border-radius: 10px;
+  overflow: hidden; /* Gör så att barnens rundade kanter inte syns utanför förälderns gränser */
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #333; /* Mörk linje för avskiljare */
+}
+
+th {
+  background: #222; /* Mörkare bakgrund för header */
+}
+
+tr:hover {
+  background: rgba(255, 255, 255, 0.02); /* Lätt highlight för rader */
+}
+
+/* @media screen and (max-width: 600px) {
+  form,
+  table {
+    width: 90%;
+  }
+} */
+
+.search-filter-btn {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 3em;
+}
+
+.logo {
+  max-width: 200px;
+  cursor: pointer;
+  filter: grayscale(100%);
+  transition: filter 450ms ease;
+  margin: 20px;
+  transition-property: box-shadow, transform;
+  transition-duration: 350ms;
+  transition-timing-function: ease;
+  margin: 0px;
+  /* box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.24); */
+}
+
+.logo:is(:hover, :focus) {
+  filter: grayscale(0%) drop-shadow(0 8px 8px rgba(0, 0, 0, 0.5));
+  /* border-radius: 50%;
+  box-shadow: 0px 8px 10px 1px rgba(0, 0, 0, 0.2); */
+  transform: translateY(-10px);
+}
+
+/*****************
+/********** NAV LINKS DESKTOP
+/*****************************/
+header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+nav {
+  margin-top: 0;
+}
+
+nav {
+  top: 50%;
+  right: 0;
+  left: 0;
+  display: table;
+  margin: 0 auto;
+  transform: translateY(-50%);
+}
+
+nav a {
+  position: relative;
+  max-width: 33.333%;
+  display: table-cell;
+  text-align: center;
+  color: #949494;
+  text-decoration: none;
+  font: poppins;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 10px 20px;
+  transition: 0.2s ease color;
+}
+
+nav a:before,
+nav a:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 0.2s ease transform;
+}
+
+nav a:before {
+  top: 0;
+  left: 10px;
+  width: 6px;
+  height: 6px;
+}
+
+nav a:after {
+  top: 5px;
+  left: 18px;
+  width: 4px;
+  height: 4px;
+}
+
+nav a:nth-child(1):before {
+  background-color: yellow;
+}
+
+nav a:nth-child(1):after {
+  background-color: red;
+}
+
+nav a:nth-child(2):before {
+  background-color: #00e2ff;
+}
+
+nav a:nth-child(2):after {
+  background-color: #89ff00;
+}
+
+nav a:nth-child(3):before {
+  background-color: purple;
+}
+
+nav a:nth-child(4):after {
+  background-color: palevioletred;
+}
+
+#indicator {
+  position: absolute;
+  left: 89%;
+  bottom: 0;
+  width: 40px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 5px;
+  transition: 0.4s ease left;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+nav a:hover:before,
+nav a:hover:after {
+  transform: scale(1);
+}
+
+nav a:nth-child(1):hover ~ #indicator {
+  left: 5%;
+  background: linear-gradient(130deg, yellow, red);
+}
+
+nav a:nth-child(2):hover ~ #indicator {
+  left: 30%;
+  background: linear-gradient(130deg, #00e2ff, #89ff00);
+}
+
+nav a:nth-child(3):hover ~ #indicator {
+  left: 63%;
+  background: linear-gradient(130deg, purple, palevioletred);
+}
+
+nav a:nth-child(4):hover ~ #indicator {
+  left: 88%; /* Deta bestämmer hur långt hover diven ska röra sig*/
+  background: linear-gradient(130deg, rgb(219, 236, 91), rgb(182, 62, 154));
+}
+/******************************************************************************************************************************************
+/ NAV STYLE SLUT
+********************************************************************************************************************************/
+
+footer {
+  text-align: center;
+  width: 100%;
+  margin-top: 70px;
+  padding-top: 7px;
+  height: 2rem;
+  background: rgb(5, 97, 116);
+  background: linear-gradient(
+    0deg,
+    rgba(157, 216, 255, 0.464) 20%,
+    rgba(253, 187, 45, 0) 100%
+  );
+}
+.hamburger-menu {
+  display: none;
+}
+
+@media screen and (max-width: 1060px) {
+  #indicator {
+    display: none;
+  }
+  .logo {
+    max-width: 170px;
+    cursor: pointer;
+    filter: grayscale(100%);
+    transition: filter 450ms ease;
+    margin: 20px;
+    transition-property: box-shadow, transform;
+    transition-duration: 350ms;
+    transition-timing-function: ease;
+    margin: 0px;
+    /* box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.24); */
+    /* position: absolute; */
+    left: 20px;
+    top: 20px;
+  }
+
+  .logo:is(:hover, :focus) {
+    filter: grayscale(0%) drop-shadow(0 8px 8px rgba(0, 0, 0, 0.5));
+    /* border-radius: 50%;
+box-shadow: 0px 8px 10px 1px rgba(0, 0, 0, 0.2); */
+    transform: translateY(-10px);
+  }
+  /* Hamburger Menu */
+  .hamburger-menu {
+    display: block;
+    position: absolute;
+    margin-top: 25px;
+    right: 20px;
+    font-size: 25px;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it's above other elements */
+  }
+
+  /* Hide regular navigation links */
+  nav .navlink {
+    display: none;
+
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  nav {
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    position: absolute;
+    /* top: 60px; Below the hamburger menu */
+    right: 0;
+    width: 100%;
+    transform: translateY(-100%); /* Start off-screen */
+    transition: transform 0.5s ease-in-out; /* Smooth transition for sliding down */
+  }
+
+  /* Ensure the logo stays on the left */
+  .logo {
+    float: left;
+  }
+
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  nav {
+    margin: auto;
+  }
+
+  /* Class to slide down the navbar */
+  .nav-active {
+    transform: translateY(0); /* Slide down to show */
+  }
+}

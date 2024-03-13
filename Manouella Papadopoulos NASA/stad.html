@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stad.css">
+    <title>Cities</title>
+  </head>
+  <body>
+    <header>
+      <a href="index.html">
+        <img src="logga.png" class="logo" alt="Logo image of Space exoplanet" />
+      </a>
+        <!-- Hamburger Icon (hidden by default, visible in mobile view) -->
+        <div id="hamburger-menu" class="hamburger-menu">
+          <i class="fa-solid fa-bars-staggered"></i>
+        </div>
+
+      <!--- NAV LÄNKAR -->
+      <nav>
+        <a href="index.html" class="navlink" aria-la>Home</a>
+        <a href="mass.html" class="navlink" aria-label="Go to largest planets"
+          >Largest Planets</a
+        >
+        <a href="solarsystem.html" class="navlink" aria-label="go to 3D solar system"
+          >3D Solar System</a
+        >
+        <a href="stad.html" class="navlink" aria-label="Go to Cities">Cities</a>
+        <div id="indicator"></div>
+      </nav>
+    </header>
+<main>
+  <h1 id="#upp">Cities editor</h1>
+    <!-- Lägga till stad -->
+    <div id="formContainer">
+  <form id="addCityForm">
+    <input type="text" id="nameInput" placeholder="Stadens namn">
+    <input type="number" id="populationInput" placeholder="Befolkning">
+    <button type="submit">Lägg till stad</button>
+  </form>
+
+ <!-- Redigera stad -->
+<form id="editCityForm" style="display:none;">
+  <input type="text" id="editNameInput" placeholder="Nytt namn">
+  <input type="number" id="editPopulationInput" placeholder="Ny befolkning">
+
+  <button type="submit" id="editCityButton">Spara ändringar</button>
+
+</form>
+
+  <!-- Lista över städer -->
+  <table id="citiesTable">
+    <thead>
+      <tr>
+        <th>Namn</th>
+        <th>Befolkning</th>
+        <th>Åtgärder</th>
+      </tr>
+    </thead>
+    <tbody id="citiesList">
+      <!-- Rader för städer kommer att läggas till här via JavaScript -->
+    </tbody>
+  </table>
+    </div>
+</main>
+<footer>
+  Made by Manouella Papadopoulos
+  <a
+    href="https://www.linkedin.com/in/manouella-papadopoulos-2b2b2a177/"
+    aria-label="Go to the authors linkedin page"
+    target="_blank"
+  >
+    <i class="fa-brands fa-linkedin fa-xl" style="color: #fff"> </i>
+  </a>
+  <script src="stad.js"></script>
+      </body>
+    </html>
+  </body>
+</html>

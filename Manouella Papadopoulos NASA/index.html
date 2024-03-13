@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="icon" href="favicon.ico" type="bild/ikon" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Planets &#x1F31D;</title>
+  </head>
+  <body>
+    <header>
+      <!--- LOGGA MED LÄNK -->
+      <a href="index.html">
+        <img src="logga.png" class="logo" alt="Logo image of Space exoplanet" />
+      </a>
+
+      <!-- NAV LÄNKAR -->
+
+      <!-- Hamburger Icon (hidden by default, visible in mobile view) -->
+      <div id="hamburger-menu" class="hamburger-menu">
+        <i class="fa-solid fa-bars-staggered"></i>
+      </div>
+
+      <!-- NAV LÄNKAR -->
+      <nav>
+        <a href="index.html" class="navlink" aria-la>Home</a>
+        <a href="mass.html" class="navlink" aria-label="Go to largest planets"
+          >Largest Planets</a
+        >
+        <a
+          href="solarsystem.html"
+          class="navlink"
+          aria-label="go to 3D solar system"
+          >3D Solar System</a
+        >
+        <a href="stad.html" class="navlink" aria-label="Go to Cities">Cities</a>
+        <div id="indicator"></div>
+      </nav>
+    </header>
+    <h1>SPACE EXOPLANETS</h1>
+    <section>
+      Exoplanets are planets beyond our solarsystem. This continuously updated
+      exoplanetary encyclopedia from Nasa combines interactive visualizations
+      with detailed data on all known exoplanets.
+      <p id="planet-count"></p>
+      Click on a planet to see more information with vital statistics.
+    </section>
+    <p class="planet-type-text">Planet type</p>
+    <!--Search bar: (mitt sök funkar inte om jag gör om min
+        "search-container"-div till form-element)-->
+    <div id="search-container">
+      <!-- Search input -->
+      <input
+        type="search"
+        id="search-input"
+        aria-label="Search field"
+        placeholder="Search for a planet by name"
+      />
+      <button id="search-button" aria-label="search button">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+    <div class="search-filter-btn">
+      <!-- Planet Type knappar -->
+      <div id="planet-type-buttons">
+        <button id="btn-all">Show all</button>
+        <button id="btn-gas-giant">Gas Giant</button>
+        <button id="btn-neptune-like">Neptune-like</button>
+        <button id="btn-super-earth">Super Earth</button>
+        <button id="btn-terrestrial">Terrestrial</button>
+        <button id="btn-unknown">Unknown</button>
+      </div>
+    </div>
+
+    <!--pagination div som innehåller bak och fram knapp-->
+    <div id="pagination">
+      <div class="items-selection">
+        <select id="items-per-page">
+          <option value="15">15</option>
+          <option value="25">25</option>
+        </select>
+
+        <!-- Nuvarande items och totalt antal av items detta värdet kommer från  -->
+        <span id="items-range"></span> of <span id="total-items"></span> Planets
+      </div>
+      <!-- Pagination knappar -->
+      <div class="pagination-controls">
+        <button id="first-page" aria-label="go to first page">
+          <i class="fa-solid fa-angles-down fa-rotate-90"></i>
+        </button>
+
+        <button aria-label="go to previous page" id="prev-page">
+          <i class="fa-solid fa-angle-left"></i>
+        </button>
+
+        <span id="current-page">1</span> of
+        <span id="total-pages">221</span> Pages
+        <button id="next-page" aria-label="go to next page">
+          <i class="fa-solid fa-angle-left fa-rotate-180"></i>
+        </button>
+        <button id="last-page" aria-label="go to last page">
+          <i class="fa-solid fa-angles-up fa-rotate-90"></i>
+        </button>
+      </div>
+    </div>
+
+    <!--container för alla planeter-->
+    <div id="planets-container"></div>
+    <div class="row"></div>
+
+          <!-- Dynamic content will be inserted here -->
+
+
+    </div>
+
+    <footer>
+      Made by Manouella Papadopoulos
+      <a
+        href="https://www.linkedin.com/in/manouella-papadopoulos-2b2b2a177/"
+        aria-label="Go to the authors linkedin page"
+        target="_blank"
+      >
+        <i class="fa-brands fa-linkedin fa-xl" style="color: #fff"> </i>
+      </a>
+    </footer>
+    <script src="index.js">
+    </script>
+    <!-- <script src="indexModal.js"></script> -->
+  </body>
+</html>
